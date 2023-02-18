@@ -10,37 +10,25 @@
 int main(void)
 {
 	int a = 0;
-	int b;
-	int c;
-	int d;
-	int e;
-	int f;
+	int b = 1;
 
 	while (a <= 98)
 	{
-		b = (c / 10 + '0');
-		c = (c % 10 + '0');
-		d = 0;
-		while (d <= 98)
+		b = a + 1;
+		while (b <= 99)
 		{
-			e = (d / 10 + '0');
-			f = (d % 10 + '0');
+			putchar((a / 10) + '0');
+			putchar((a % 10) + '0');
+			putchar(' ');
+			putchar((b / 10) + '0');
+			putchar((b % 10) + '0');
 
-			if (a < d)
+			if (a != 98)
 			{
-				putchar(b);
-				putchar(c);
+				putchar(',');
 				putchar(' ');
-				putchar(e);
-				putchar(f);
-
-				if (a != 98)
-				{
-					putchar(',');
-					putchar(' ');
-				}
 			}
-			d++;
+			b++;
 		}
 		a++;
 	}
