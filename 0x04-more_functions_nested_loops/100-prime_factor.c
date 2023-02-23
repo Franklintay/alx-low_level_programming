@@ -11,7 +11,7 @@ int main(void)
 	long a, l;
 	long n = 612852475143;
 
-	for (a = 1; a++;)
+	for (a = 1; a <= 7; a++)
 	{
 		if (n % a == 0)
 		{
