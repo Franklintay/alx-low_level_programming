@@ -1,42 +1,78 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
- * infinite_add - adds two numbers.
- * @n1: !st number
- * @n2: 2nd number
- * @r: the buffer
- * @size_r: the buffer size
- * Return: the result can not be stored in r the function must return 0
+ * rev_string - reverse array
+ * @n: integer
+ * Return: Always 0
  */
+
+void rev_string(char *n)
+{
+	int i = 0;
+	int j = 0;
+	char temp;
+
+	while (*(n + i) != '\0')
+	{
+		i++;
+	}
+	i--;
+
+	for (j = 0; j < i; j++)
+	{
+		temp = *(n + j);
+		*(n + j) = *(n + i);
+		*(n + i) = temp;
+	}
+}
+/**
+ * infinite_add - add 2 integer
+ * @n1: 1st integer
+ * @n2: 2nd integer
+ * @r: pointer to buffer
+ * @size_r: buffer size
+ * Return:  the result can not be stored in r the function must return 0
+ */
+
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int x, y = 0;
+	int o = 0, i = 0, j = 0, d = 0;
+	int v = 0, v1 = 0, tt = 0;
 
-	for (; *n1 && *n2; n1--, n2--, size_r--)
-	{
-		x = (*n1 - '0') + (*n2 - '0');
-		x += y;
-		*(r + size_r) = (x % 10) + '0';
-		y = x / 10;
-	}
-	for (; *n1; n1--, size_r--)
-	{
-		x = (*n1 - '0') + y;
-		*(r + size_r) = (x % 10) + '0';
-		y = x / 10;
-	}
-	for (; *n2; n2--, size_r--)
-	{
-		x = (*n2 - '0') + y;
-		*(r + size_r) = (x % 10) + '0';
-		y = x / 10;
-	}
-	if (y && size_r >= 0)
-	{
-		*(r + size_r) = (y % 10) + '0';
-		return (r + size_r);
-	}
-	else if (y && size_r < 0)
+	while (*(n1 + i) != '\0')
+		i++;
+	while (*(n2 + j) != '\0')
+		j++;
+	i--;
+	j--;
+	if (j >= size_r || i >= size_r)
 		return (0);
-	return (r + size_r + 1);
+	while (j >= 0 || i >+ 0 || o == 1)
+	{
+		if (i < 0)
+			v = 0;
+		else
+			v = *(n1 + i) - '0';
+		if (j < 0)
+			v1 = 0;
+		else
+			v1 = *(n2 + j) - '0';
+		tt = v + v1 + o;
+		if (tt >= 10)
+			o = 1;
+		else
+			o = 0;
+		if (d >= (size_r - 1))
+			return (0);
+		*(r + d) = (tt % 10) + '0';
+		d++;
+		j--;
+		i--;
+	}
+	if (d == size_r)
+		return (0);
+	*(r + d) = '\0';
+	rev_string(r);
+	return (r);
 }
