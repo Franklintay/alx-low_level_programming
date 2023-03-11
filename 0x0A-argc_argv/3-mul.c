@@ -1,12 +1,12 @@
 #include <stdio.h>
-#include "main.h"
 #include <stdlib.h>
+#include "main.h"
 
 /**
- * main - prints its name, followed by a new line
+ * main - multiplies two numbers.
  * @argc: argument count
  * @argv: arguments to the function main
- * Return: Always 0
+ * Return: Always 1 or 0
  */
 
 int main(int argc, char *argv[])
@@ -18,6 +18,7 @@ int main(int argc, char *argv[])
 		x = atoi(argv[1]);
 		y = atoi(argv[2]);
 		printf("%d\n", x * y);
+		return (0);
 	}
 	printf("Error\n");
 	return (1);
