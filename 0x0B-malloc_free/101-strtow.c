@@ -3,14 +3,16 @@
 #include <stdlib.h>
 /**
  * word - counts the letter of a string.
- * @s: A string
+ * @f: A string
  * Return: an integer
  */
 int word(char *f)
 {
 	int a, b, c;
+
 	a = 0;
 	c = 0;
+
 	for (b = 0; f[b] != '\0'; b++)
 	{
 		if (f[b] == ' ')
@@ -32,7 +34,8 @@ char **strtow(char *str)
 {
 	char **i, *j;
 	int w, x = 0, y = 0, z, c = 0, beg, fin;
-	while(*(str + y))
+
+	while (*(str + y))
 		y++;
 	z = word(str);
 	if (z == 0)
