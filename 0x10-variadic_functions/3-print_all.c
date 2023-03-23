@@ -34,13 +34,14 @@ void print_all(const char * const format, ...)
 				       s = va_arg(x, char *);
 					if (!s)
 						s = "(nil)";
-					printf("%s%s", separate, s);
+					else
+						printf("%s%s", separate, s);
 					break;
 				default:
 					i++;
 					continue;
 			}
-			separate = ",";
+			separate = ", ";
 			i++;
 		}
 	}
